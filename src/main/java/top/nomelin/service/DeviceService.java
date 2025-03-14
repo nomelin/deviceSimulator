@@ -45,14 +45,30 @@ public class DeviceService {
 
     public Sensor addSensorToDevice(String deviceId, SensorConfig config) {
         SimulatedDevice device = getDevice(deviceId);
-        Sensor sensor = config.toSensor();
+        device.stop();
+        Sensor sensor = config.toSensor(gson);
         device.getSensors().add(sensor);
         log.info("Added sensor {} to device {}", sensor, device);
         return sensor;
     }
 
+    public void removeSensorFromDevice(String deviceId, String sensorId) {
+        SimulatedDevice device = getDevice(deviceId);
+        device.stop();
+        List<Sensor> sensors = device.getSensors();
+
+        Sensor target = sensors.stream()
+                .filter(s -> s.getSensorId().equals(sensorId))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Sensor not found"));
+
+        sensors.remove(target);
+        log.info("Removed sensor {} from device {}", target, device);
+    }
+
     public SimulatedDevice updateDevice(String deviceId, DeviceDTO dto) {
         SimulatedDevice device = getDevice(deviceId);
+        device.stop();
         if (dto.getBufferSize() > 0) {
             device.setBufferSize(dto.getBufferSize());
         }
@@ -68,6 +84,7 @@ public class DeviceService {
 
     public Sensor updateSensor(String deviceId, String sensorId, SensorConfig config) {
         SimulatedDevice device = getDevice(deviceId);
+        device.stop();
         List<Sensor> sensors = device.getSensors();
 
         Sensor target = sensors.stream()
@@ -75,7 +92,7 @@ public class DeviceService {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("Sensor not found"));
 
-        Sensor newSensor = config.toSensor();
+        Sensor newSensor = config.toSensor(gson);
         sensors.set(sensors.indexOf(target), newSensor);
         log.info("Updated sensor {} of device {}", newSensor, device);
         return newSensor;
@@ -99,6 +116,13 @@ public class DeviceService {
             throw new IllegalArgumentException("Device not found");
         }
         return device;
+    }
+
+    public void deleteDevice(String deviceId) {
+        SimulatedDevice device = getDevice(deviceId);
+        device.stop();
+        devices.remove(deviceId);
+        log.info("Deleting device:{}", device);
     }
 
     public List<SimulatedDevice> getAllDevices() {

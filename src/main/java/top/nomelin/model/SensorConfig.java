@@ -1,5 +1,6 @@
 package top.nomelin.model;
 
+import com.google.gson.Gson;
 import lombok.Data;
 import top.nomelin.generate.DataGenerator;
 import top.nomelin.generate.GeneratorParam;
@@ -42,15 +43,15 @@ public class SensorConfig {
 
 
     // toSensor() 方法用于转换为设备使用的Sensor对象
-    public Sensor toSensor() {
+    public Sensor toSensor(Gson gson) {
         DataGenerator generator;
         GeneratorParam param = toGeneratorParam();
         generator = switch (generationType) {
-            case "随机数" -> new RandomDataGenerator(param);
-            case "正弦波(带噪声)" -> new SineWaveGenerator(param);
+            case "随机数" -> new RandomDataGenerator(param, gson);
+            case "正弦波(带噪声)" -> new SineWaveGenerator(param, gson);
             default -> throw new IllegalArgumentException("不支持的生成类型: " + generationType);
         };
-        return new Sensor(sensorId, generator);
+        return new Sensor(sensorId, generator, gson);
     }
 }
 

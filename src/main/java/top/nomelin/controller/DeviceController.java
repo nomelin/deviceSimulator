@@ -37,6 +37,12 @@ public class DeviceController {
         return Result.success(deviceService.getDevice(deviceId));
     }
 
+    @DeleteMapping("/{deviceId}")
+    public Result deleteDevice(@PathVariable String deviceId) {
+        deviceService.deleteDevice(deviceId);
+        return Result.success();
+    }
+
     @GetMapping("/{deviceId}/sensors")
     public Result getSensors(@PathVariable String deviceId) {
         return Result.success(deviceService.getSensors(deviceId));
@@ -51,6 +57,12 @@ public class DeviceController {
     public Result updateSensor(@PathVariable String deviceId, @PathVariable String sensorId,
                                @RequestBody SensorConfig sensorConfig) {
         return Result.success(deviceService.updateSensor(deviceId, sensorId, sensorConfig));
+    }
+
+    @DeleteMapping("/{deviceId}/sensors/{sensorId}")
+    public Result deleteSensor(@PathVariable String deviceId, @PathVariable String sensorId) {
+        deviceService.removeSensorFromDevice(deviceId, sensorId);
+        return Result.success();
     }
 
     @PostMapping("/{deviceId}/start")

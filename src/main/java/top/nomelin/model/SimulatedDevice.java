@@ -1,6 +1,9 @@
 package top.nomelin.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.Gson;
+import com.google.gson.annotations.Expose;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.client.RestTemplate;
@@ -10,15 +13,21 @@ import java.util.*;
 @Slf4j
 @Data
 public class SimulatedDevice {
-    private transient final Timer timer;
-    private final RestTemplate restTemplate;
-    private final Gson gson;
-
+    @JsonIgnore
+    @Expose(serialize = false, deserialize = false)
+    private transient final RestTemplate restTemplate;
+    @JsonIgnore
+    @Expose(serialize = false, deserialize = false)
+    private transient final Gson gson;
+    @JsonIgnore
+    @Expose(serialize = false, deserialize = false)
+    private transient Timer timer;
     private String deviceId;
     private List<Sensor> sensors;
     private int bufferSize;
     private String userId;
     private Integer interval;
+    @JsonProperty("isRunning")
     private boolean isRunning;
     private List<Map<String, Object>> dataBuffer = new ArrayList<>();
 
@@ -31,10 +40,10 @@ public class SimulatedDevice {
         this.interval = interval == null ? 1000 : interval;
         this.restTemplate = restTemplate;
         this.gson = gson;
-        this.timer = new Timer();
     }
 
     private void startDataGeneration() {
+        timer = new Timer(); // 创建新的定时器
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
@@ -60,6 +69,7 @@ public class SimulatedDevice {
 
         if (dataBuffer.size() >= bufferSize) {
             sendData();
+            log.info("Data buffer for device {} is full to capacity: {}, sending data", deviceId, bufferSize);
         }
     }
 
@@ -92,8 +102,23 @@ public class SimulatedDevice {
     public void stop() {
         if (isRunning) {
             isRunning = false;
-            timer.cancel();
+            if (timer != null) {
+                timer.cancel();
+            }
         }
     }
 
+
+    @Override
+    public String toString() {
+        return "SimulatedDevice{" +
+                "deviceId='" + deviceId + '\'' +
+                ", sensors=" + sensors +
+                ", bufferSize=" + bufferSize +
+                ", userId='" + userId + '\'' +
+                ", interval=" + interval +
+                ", isRunning=" + isRunning +
+                ", dataBuffer=" + dataBuffer +
+                '}';
+    }
 }

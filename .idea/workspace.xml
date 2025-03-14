@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="0.3 废弃swing，转向springboot">
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/DeviceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/controller/DeviceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/controller/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SensorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/dto/DeviceDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/service/DeviceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="0.4 初步">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/device/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/Sensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/device/SimulatedDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/controller/DeviceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/controller/DeviceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/controller/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/generate/impl/RandomDataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/generate/impl/RandomDataGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/generate/impl/SineWaveGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/generate/impl/SineWaveGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/model/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/Sensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SensorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SensorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/service/DeviceService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1741959574058</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="0.4 初步">
+      <created>1741964684305</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741964684305</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +161,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0.1 hello world" />
     <MESSAGE value="0.3 废弃swing，转向springboot" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.3 废弃swing，转向springboot" />
+    <MESSAGE value="0.4 初步" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.4 初步" />
   </component>
 </project>
