@@ -22,12 +22,12 @@ public class RandomDataGenerator implements DataGenerator {
     }
 
     public RandomDataGenerator(GeneratorParam param) {
-        if (Objects.isNull(param) || param.getMin() == null || param.getMax() == null || param.getInteger() == null) {
+        if (Objects.isNull(param) || param.getMin() == null || param.getMax() == null || param.getIsInteger() == null) {
             throw new IllegalArgumentException("[随机数],min,max,integer参数不能为空");
         }
         this.min = param.getMin();
         this.max = param.getMax();
-        this.isInteger = param.getInteger();
+        this.isInteger = param.getIsInteger();
     }
 
     @Override
