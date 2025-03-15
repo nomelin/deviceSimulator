@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="0.5 实现">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/controller/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" afterDir="false" />
-    </list>
+    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="0.6" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1741969179613</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="0.6">
+      <created>1742022686095</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742022686095</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +167,7 @@
     <MESSAGE value="0.4 初步" />
     <MESSAGE value="0.5 初步" />
     <MESSAGE value="0.5 实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.5 实现" />
+    <MESSAGE value="0.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.6" />
   </component>
 </project>
