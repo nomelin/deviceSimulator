@@ -63,8 +63,9 @@ public class SimulatedDevice {
             sensorValues.putAll(sensor.generateData());
         }
 
-        dataPoint.put(String.valueOf(timestamp), sensorValues);
-        log.info("Generated data for device {}: {}", deviceId, dataPoint);
+        dataPoint.put(String.valueOf(timestamp), List.of(sensorValues));
+        //例如：{1742020370260=[{d1=66.69847904026506, d2=99.00262427164728}]}
+//        log.info("Generated data for device {}: {}", deviceId, dataPoint);
         dataBuffer.add(dataPoint);
 
         if (dataBuffer.size() >= bufferSize) {
@@ -84,7 +85,7 @@ public class SimulatedDevice {
                 data.putAll(point);
             }
             payload.put("data", data);
-
+            log.info("Sending data for device {}: {}", deviceId, payload);
             restTemplate.postForEntity("http://localhost:12345/uploadData", payload, String.class);
             dataBuffer.clear();
         } catch (Exception e) {

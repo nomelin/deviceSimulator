@@ -13,6 +13,6 @@ public class GlobalExceptionHandler {
     public Result handleInternalError(Exception ex) {
         ex.printStackTrace();
         log.error("服务器内部错误", ex);
-        return new Result("400", "Internal Server Error", ex.getMessage());
+        return new Result("400", "设备模拟服务器：" + ex.getMessage());
     }
 }
