@@ -78,6 +78,12 @@ public class DeviceService {
         if (dto.getUserId() != null) {
             device.setUserId(dto.getUserId());
         }
+        if(dto.getDeviceId() != null){
+            device.setDeviceId(dto.getDeviceId());
+            //更改存储的key值
+            devices.remove(deviceId);
+            devices.put(dto.getDeviceId(), device);
+        }
         log.info("Updated device:{}", device);
         return device;
     }

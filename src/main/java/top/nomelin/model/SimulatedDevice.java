@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.Expose;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
@@ -70,7 +71,7 @@ public class SimulatedDevice {
 
         if (dataBuffer.size() >= bufferSize) {
             sendData();
-            log.info("Data buffer for device {} is full to capacity: {}, sending data", deviceId, bufferSize);
+//            log.info("Data buffer for device {} is full to capacity: {}, sending data", deviceId, bufferSize);
         }
     }
 
@@ -86,7 +87,9 @@ public class SimulatedDevice {
             }
             payload.put("data", data);
             log.info("Sending data for device {}: {}", deviceId, payload);
-            restTemplate.postForEntity("http://localhost:12345/uploadData", payload, String.class);
+            ResponseEntity<String> response =
+                    restTemplate.postForEntity("http://localhost:12345/connect/uploadData", payload, String.class);
+            log.info("Response from server: {}", response.getBody());
             dataBuffer.clear();
         } catch (Exception e) {
             log.error("Failed to send data for device {}: {}", deviceId, e.getMessage());
