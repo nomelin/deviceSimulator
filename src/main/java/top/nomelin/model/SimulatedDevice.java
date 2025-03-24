@@ -88,7 +88,7 @@ public class SimulatedDevice {
             payload.put("data", data);
             log.info("Sending data for device {}: {}", deviceId, payload);
             ResponseEntity<String> response =
-                    restTemplate.postForEntity("http://localhost:12345/connect/uploadData", payload, String.class);
+                    restTemplate.postForEntity("http://localhost:34567/connect/uploadData", payload, String.class);
             log.info("Response from server: {}", response.getBody());
             dataBuffer.clear();
         } catch (Exception e) {

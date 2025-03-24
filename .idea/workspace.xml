@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="0.8">
+    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/service/DeviceService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +114,8 @@
       <workItem from="1741944340225" duration="9013000" />
       <workItem from="1742041087946" duration="636000" />
       <workItem from="1742095084185" duration="23000" />
+      <workItem from="1742104925376" duration="789000" />
+      <workItem from="1742538302832" duration="649000" />
     </task>
     <task id="LOCAL-00001" summary="0.1 hello world">
       <created>1741944398999</created>
@@ -165,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1742029613062</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="9">
+      <created>1742106008019</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742106008019</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +199,7 @@
     <MESSAGE value="0.6" />
     <MESSAGE value="0.7" />
     <MESSAGE value="0.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.8" />
+    <MESSAGE value="9" />
+    <option name="LAST_COMMIT_MESSAGE" value="9" />
   </component>
 </project>
