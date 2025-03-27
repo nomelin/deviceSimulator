@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.Expose;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -31,6 +32,9 @@ public class SimulatedDevice {
     @JsonProperty("isRunning")
     private boolean isRunning;
     private List<Map<String, Object>> dataBuffer = new ArrayList<>();
+
+    @Value("${send.url}")
+    private String sendUrl;
 
     public SimulatedDevice(String deviceId, List<Sensor> sensors, int bufferSize,
                            String userId, Integer interval, RestTemplate restTemplate, Gson gson) {
@@ -88,7 +92,7 @@ public class SimulatedDevice {
             payload.put("data", data);
             log.info("Sending data for device {}: {}", deviceId, payload);
             ResponseEntity<String> response =
-                    restTemplate.postForEntity("http://localhost:34567/connect/uploadData", payload, String.class);
+                    restTemplate.postForEntity(sendUrl, payload, String.class);
             log.info("Response from server: {}", response.getBody());
             dataBuffer.clear();
         } catch (Exception e) {
