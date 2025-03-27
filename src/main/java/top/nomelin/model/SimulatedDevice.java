@@ -6,7 +6,6 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.Expose;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -33,11 +32,10 @@ public class SimulatedDevice {
     private boolean isRunning;
     private List<Map<String, Object>> dataBuffer = new ArrayList<>();
 
-    @Value("${send.url}")
     private String sendUrl;
 
     public SimulatedDevice(String deviceId, List<Sensor> sensors, int bufferSize,
-                           String userId, Integer interval, RestTemplate restTemplate, Gson gson) {
+                           String userId, Integer interval, RestTemplate restTemplate, Gson gson, String sendUrl) {
         this.deviceId = deviceId;
         this.sensors = sensors;
         this.bufferSize = bufferSize;
@@ -45,6 +43,7 @@ public class SimulatedDevice {
         this.interval = interval == null ? 1000 : interval;
         this.restTemplate = restTemplate;
         this.gson = gson;
+        this.sendUrl = sendUrl;
     }
 
     private void startDataGeneration() {
@@ -90,10 +89,10 @@ public class SimulatedDevice {
                 data.putAll(point);
             }
             payload.put("data", data);
-            log.info("Sending data for device {}: {}", deviceId, payload);
+            log.info("Sending data for device {}: {}，sendUrl: {}", deviceId, payload, sendUrl);
             ResponseEntity<String> response =
                     restTemplate.postForEntity(sendUrl, payload, String.class);
-            log.info("Response from server: {}", response.getBody());
+//            log.info("Response from server: {}", response.getBody());
             dataBuffer.clear();
         } catch (Exception e) {
             log.error("Failed to send data for device {}: {}", deviceId, e.getMessage());

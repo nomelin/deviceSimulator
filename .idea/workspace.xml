@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="0.11" />
+    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="0.12">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/service/DeviceService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,6 +119,9 @@
       <workItem from="1742538302832" duration="649000" />
       <workItem from="1742784687656" duration="97000" />
       <workItem from="1743057873121" duration="283000" />
+      <workItem from="1743058173731" duration="239000" />
+      <workItem from="1743058438894" duration="10000" />
+      <workItem from="1743059046646" duration="696000" />
     </task>
     <task id="LOCAL-00001" summary="0.1 hello world">
       <created>1741944398999</created>
@@ -186,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1743058124158</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="0.12">
+      <created>1743058399469</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1743058399469</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +229,7 @@
     <MESSAGE value="9" />
     <MESSAGE value="0.10" />
     <MESSAGE value="0.11" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.11" />
+    <MESSAGE value="0.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.12" />
   </component>
 </project>

@@ -3,6 +3,7 @@ package top.nomelin.service;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import top.nomelin.model.Sensor;
@@ -22,10 +23,14 @@ public class DeviceService {
     private final RestTemplate restTemplate;
     private final Gson gson;
 
+    @Value("${send.url}")
+    private String sendUrl;
+
     @Autowired
     public DeviceService(RestTemplate restTemplate, Gson gson) {
         this.restTemplate = restTemplate;
         this.gson = gson;
+        log.info("DeviceService initialized, sendUrl:{}", sendUrl);
     }
 
     public SimulatedDevice createDevice(DeviceDTO dto) {
@@ -36,7 +41,9 @@ public class DeviceService {
                 dto.getUserId(),
                 dto.getInterval(),
                 restTemplate,
-                gson
+                gson,
+                sendUrl
+
         );
         devices.put(dto.getDeviceId(), device);
         log.info("Created device:{}", device);
@@ -78,7 +85,7 @@ public class DeviceService {
         if (dto.getUserId() != null) {
             device.setUserId(dto.getUserId());
         }
-        if(dto.getDeviceId() != null){
+        if (dto.getDeviceId() != null) {
             device.setDeviceId(dto.getDeviceId());
             //更改存储的key值
             devices.remove(deviceId);
