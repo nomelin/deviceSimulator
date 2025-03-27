@@ -12,4 +12,4 @@ server:
       timeout: 600 #设置会话超时时间,单位是秒
 
 send:
-  url: http://iot.nomelin.top/api/connect/uploadData
+  url: http://localhost:34567/connect/uploadData

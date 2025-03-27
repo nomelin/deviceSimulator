@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="0.13">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="82a157e0-dd5d-482e-8e06-c9b20dabb9c5" name="更改" comment="0.14">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/nomelin/model/SimulatedDevice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +122,9 @@
       <workItem from="1743058173731" duration="239000" />
       <workItem from="1743058438894" duration="10000" />
       <workItem from="1743059046646" duration="859000" />
-      <workItem from="1743063545531" duration="1356000" />
+      <workItem from="1743063545531" duration="1371000" />
+      <workItem from="1743081715749" duration="46000" />
+      <workItem from="1743081784566" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="0.1 hello world">
       <created>1741944398999</created>
@@ -207,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1743059896509</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="0.14">
+      <created>1743066284588</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1743066284588</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +248,7 @@
     <MESSAGE value="0.11" />
     <MESSAGE value="0.12" />
     <MESSAGE value="0.13" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.13" />
+    <MESSAGE value="0.14" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.14" />
   </component>
 </project>

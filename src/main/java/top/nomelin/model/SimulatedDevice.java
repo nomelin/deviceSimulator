@@ -89,13 +89,13 @@ public class SimulatedDevice {
                 data.putAll(point);
             }
             payload.put("data", data);
-            log.info("Sending data for device {}: {}，sendUrl: {}", deviceId, payload, sendUrl);
             ResponseEntity<String> response =
                     restTemplate.postForEntity(sendUrl, payload, String.class);
 //            log.info("Response from server: {}", response.getBody());
+            log.info("Sending data for device {}: {}，sendUrl: {}", deviceId, payload, sendUrl);
             dataBuffer.clear();
         } catch (Exception e) {
-            log.error("Failed to send data for device {}: {}", deviceId, e.getMessage());
+            log.error("[发送失败，未发送数据会持续累积。注意OOM风险]Failed to send data for device {}: {}", deviceId, e.getMessage());
         }
     }
 
